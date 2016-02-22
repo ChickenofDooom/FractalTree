@@ -22,7 +22,7 @@ public void drawBranches(int x,int y, double branchLength, double angle)
 {   
 	//your code here
 angle1= angle+ branchAngle;
-angle2= angle= branchAngle;  
+angle2= angle- branchAngle;  
 branchLength= branchLength*fractionLength;
 int endX1=(int)(branchLength*Math.cos(angle1) + x);
 int endY1=(int)(branchLength*Math.sin(angle1) + y);
@@ -31,7 +31,8 @@ int endY2=(int)(branchLength*Math.sin(angle2) + y);
 line(x,y,endX2,endY2);
 line(x,y,endX1,endY1);
 if(branchLength>smallestBranch){
- drawBranches 
+ drawBranches(endX1,endY1,branchLength,angle1); 
+  drawBranches(endX2,endY2,branchLength,angle2);
 }
 
 
